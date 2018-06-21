@@ -145,7 +145,7 @@ function($) {
     "use strict";
 
     var App = function() {
-        this.VERSION = "2.0.0",
+        this.VERSION = "1.5.0",
         this.AUTHOR = "Coderthemes",
         this.SUPPORT = "coderthemes@gmail.com",
         this.pageScrollElement = "html, body",
@@ -277,7 +277,7 @@ function initscrolls(){
 
       $('.slimscrollleft').slimScroll({
           height: 'auto',
-          position: 'left',
+          position: 'right',
           size: "7px",
           color: '#828e94',
           wheelStep: 5

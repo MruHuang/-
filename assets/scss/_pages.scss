@@ -62,7 +62,7 @@ File: Pages
 }
 
 .fc-day {
-  background: $white;
+  background: transparent;
 }
 
 .fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active,
@@ -81,7 +81,7 @@ File: Pages
 
 .fc {
   th.fc-widget-header {
-    background: $light5;
+    background: rgba($white,0.2);
     font-size: 14px;
     line-height: 20px;
     padding: 10px 0px;
@@ -89,11 +89,18 @@ File: Pages
   }
 }
 
+.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody,
+.fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-popover {
+  background-color: transparent;
+  border-color: rgba($white,0.1);
+}
+
 .fc-button {
-  background: $white;
-  border: 1px solid $light5;
-  color: $lightdark5;
+  background: darken($dark,4%) !important;
+  border: 1px solid darken($dark,1%);
+  color: $white;
   text-transform: capitalize;
+  text-shadow: none;
 }
 
 .fc-text-arrow {
@@ -102,7 +109,7 @@ File: Pages
 }
 
 .fc-state-hover {
-  background: $light3;
+  background: #F5F5F5;
 }
 
 .fc-state-highlight {
@@ -115,7 +122,7 @@ File: Pages
 
 .fc-unthemed {
   .fc-today {
-    background: $white;
+    background: transparent !important;
   }
 }
 
@@ -126,6 +133,7 @@ File: Pages
   font-size: 13px;
   margin: 5px 7px;
   padding: 5px 5px;
+  color: $white !important;
   text-align: center;
 }
 
@@ -145,9 +153,6 @@ File: Pages
   td.fc-day-number {
     padding-right: 5px;
   }
-}
-.fc-content {
-  color: $white;
 }
 
 
@@ -170,7 +175,8 @@ File: Pages
 .bootstrap-tagsinput {
   box-shadow: none;
   padding: 3px 7px 6px;
-  border: 1px solid #e3e3e3;
+  background-color: darken($dark,7%);
+  border: 2px solid darken($dark,1%);
   width: 100%;
 
   .label-info {
@@ -181,6 +187,10 @@ File: Pages
     margin: 3px 1px;
     border-radius: 3px;
   }
+
+  input {
+    color: $white;
+  }
 }
 /* Multiple */
 .ms-container {
@@ -188,42 +198,78 @@ File: Pages
 
   .ms-list {
     box-shadow: none;
-    border: 1px solid #e3e3e3;
+    border: 2px solid darken($dark,1%);
   }
   .ms-list.ms-focus {
     box-shadow: none;
-    border: 1px solid #aaaaaa;
+    border: 2px solid lighten($dark,2%);
   }
   .ms-selectable {
+    background-color: darken($dark,7%);
     li.ms-elem-selectable{
       border: none;
       padding: 5px 10px;
+      color: $muted;
     }
   }
   .ms-selection {
+    background-color: darken($dark,7%);
     li.ms-elem-selection{
       border: none;
       padding: 5px 10px;
+      color: $muted;
     }
   }
 }
+
+
+.search-input {
+  margin-bottom: 10px;
+}
+
+.ms-selectable {
+  box-shadow: none;
+  outline: none !important;
+}
+
+.ms-container {
+  .ms-list.ms-focus {
+    box-shadow: none;
+  }
+  .ms-selectable {
+    li.ms-hover {
+      background-color: $custom;
+      color: $white;
+    }
+  }
+  .ms-selection {
+    li.ms-hover {
+      background-color: $custom;
+      color: $white;
+    }
+  }
+}
+
+
 /* Select 2 */
 .select2-container {
   width: 100% !important;
 
   .select2-selection--single {
-    border: 1px solid darken($light,1%);
+    background-color: darken($dark,7%);
+    border: 2px solid darken($dark,1%);
     height: 38px;
 
     .select2-selection__rendered {
       line-height: 36px;
       padding-left: 12px;
+      color: $muted;
     }
 
     .select2-selection__arrow {
       height: 34px;
       width: 34px;
-      left: 3px;
+      right: 3px;
 
       b{
         border-color: darken($light,15%) transparent transparent transparent;
@@ -279,7 +325,8 @@ File: Pages
 
 .select2-container .select2-selection--multiple {
   min-height: 38px;
-  border: 1px solid darken($light,5%) !important;
+  background-color: darken($dark,7%);
+  border: 2px solid darken($dark,1%) !important;
 
   .select2-selection__rendered {
     padding: 2px 10px;
@@ -287,6 +334,7 @@ File: Pages
   .select2-search__field {
     margin-top: 7px;
     border: 0;
+    color: $white;
   }
   .select2-selection__choice {
     background-color: $custom;
@@ -374,7 +422,7 @@ File: Pages
   background-color: $light-alt;
 }
 .datepicker-inline {
-  border: 2px solid $light;
+  border: 2px solid darken($dark,1%);
 }
 .daterangepicker td.active, .daterangepicker td.active:hover {
     background-color: $primary;
@@ -399,33 +447,6 @@ File: Pages
   background-color: $primary;
       border: 1px solid $primary;
 }
-
-
-.search-input {
-  margin-bottom: 10px;
-}
-
-.ms-selectable {
-  box-shadow: none;
-  outline: none !important;
-}
-
-.ms-container {
-  .ms-list.ms-focus {
-    box-shadow: none;
-  }
-  .ms-selectable {
-    li.ms-hover {
-      background-color: $primary;
-    }
-  }
-  .ms-selection {
-    li.ms-hover {
-      background-color: $primary;
-    }
-  }
-}
-
 
 
 /* Timepicker */
@@ -458,22 +479,22 @@ File: Pages
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.25;
-    color: $dark;
+    color: $muted;
     text-align: center;
-    background-color: $light;
-    border: 1px solid rgba($dark,.15);
+    background-color: darken($dark,5%);
+    border: 1px solid darken($dark,5%);
   }
   .input-group-btn:not(:first-child)>.btn, .input-group-btn:not(:first-child)>.btn-group {
     z-index: 2;
     margin-left: -1px;
   }
   .input-group .form-control:not(:first-child), .input-group-addon:not(:first-child), .input-group-btn:not(:first-child)>.btn, .input-group-btn:not(:first-child)>.btn-group>.btn, .input-group-btn:not(:first-child)>.dropdown-toggle, .input-group-btn:not(:last-child)>.btn-group:not(:first-child)>.btn, .input-group-btn:not(:last-child)>.btn:not(:first-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .input-group .form-control:not(:last-child), .input-group-addon:not(:last-child), .input-group-btn:not(:first-child)>.btn-group:not(:last-child)>.btn, .input-group-btn:not(:first-child)>.btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:not(:last-child)>.btn, .input-group-btn:not(:last-child)>.btn-group>.btn, .input-group-btn:not(:last-child)>.dropdown-toggle {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  .input-group .form-control:not(:last-child), .input-group-addon:not(:last-child), .input-group-btn:not(:first-child)>.btn-group:not(:last-child)>.btn, .input-group-btn:not(:first-child)>.btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:not(:last-child)>.btn, .input-group-btn:not(:last-child)>.btn-group>.btn, .input-group-btn:not(:last-child)>.dropdown-toggle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
@@ -496,6 +517,23 @@ File: Pages
       &:hover,&:focus,&:active {
         border-right: none !important;
       }
+    }
+  }
+}
+
+/* Dropify */
+.dropify-wrapper {
+  background-color: darken($dark,10%);
+  border: 2px solid darken($dark,1%);
+
+  &:hover {
+    background-image: -webkit-linear-gradient(135deg,$dark 25%,transparent 25%,transparent 50%,$dark 50%,$dark 75%,transparent 75%,transparent);
+    background-image: linear-gradient(-45deg,$dark 25%,transparent 25%,transparent 50%,$dark 50%,$dark 75%,transparent 75%,transparent);
+  }
+
+  .dropify-message {
+    p {
+      color: $muted;
     }
   }
 }
@@ -553,8 +591,8 @@ File: Pages
   border-width: 0px !important;
 }
 .mce-container .mce-menubar {
-  background-color: #f2f4f7 !important;
-  border: 1px solid #d7dce5 !important;
+  background-color: darken($dark,5%) !important;
+  border: 1px solid darken($dark,1%) !important;
   padding: 2px;
 }
 .mce-container .mce-menubar .mce-btn button span {
@@ -607,18 +645,18 @@ File: Pages
   background-image: none;
 }
 .mce-container .mce-toolbar-grp {
-  background-color: #f2f4f7 !important;
-  border: 1px solid #d7dce5 !important;
+  background-color: darken($dark,5%) !important;
+  border: 1px solid darken($dark,1%) !important;
   border-top-width: 0px !important;
   padding: 6px;
 }
 .mce-container .mce-edit-area {
-  border: 1px solid #d7dce5 !important;
+  border: 1px solid darken($dark,1%) !important;
   border-width: 0px 1px !important;
 }
 .mce-container .mce-statusbar {
-  background-color: #f2f4f7 !important;
-  border: 1px solid #d7dce5 !important;
+  background-color: darken($dark,5%) !important;
+  border: 1px solid darken($dark,1%) !important;
 }
 .mce-container .mce-statusbar .mce-path .mce-path-item {
   color: #707780;
@@ -632,12 +670,15 @@ File: Pages
   border-left: 1px solid transparent;
 }
 .mce-container .mce-btn-group {
-  border: 1px solid #e9ecf2 !important;
+  border: 1px solid transparent !important;
+}
+.mce-label {
+  text-shadow: none !important;
 }
 .mce-container .mce-btn-group .mce-btn {
   box-shadow: none;
   background-image: none;
-  background-color: $white;
+  background-color: darken($dark,4%);
   border-width: 0px;
   border-radius: 0px !important;
 }
@@ -645,12 +686,20 @@ File: Pages
 .mce-container .mce-btn-group .mce-btn:focus {
   box-shadow: none;
   background-image: none;
-  background-color: $white;
+  background-color: darken($dark,3%);
 }
 .mce-container .mce-btn-group .mce-btn button span {
   color: #707780;
   font-size: 14px;
   font-weight: 300;
+}
+
+.mce-caret {
+  border-top: 4px solid lighten($dark,5%) !important;
+}
+
+.mce-splitbtn .mce-open,.mce-colorbutton:hover .mce-open,.mce-colorbutton .mce-open {
+  border-left: none !important;
 }
 .mce-container .mce-btn-group .mce-btn button .mce-caret {
   color: #707780;
@@ -729,7 +778,7 @@ File: Pages
   background-color: #d7dce5;
 }
 .mce-menubtn button {
-    color: $dark !important;
+    color: $muted !important;
 }
 .mce-menu-item-normal.mce-active {
     background-color: $custom !important;
@@ -928,11 +977,18 @@ File: Pages
   tr {
    height: 20px;
   }
+  div:first-of-type {
+    background-color: transparent !important;
+  }
 }
 .legendLabel {
     padding-left: 5px !important;
     line-height: 10px;
     padding-right: 10px;
+    color: $muted;
+}
+.flot-tick-label {
+  color: $muted !important;
 }
 
 /* Sparkline chart */
@@ -966,7 +1022,7 @@ File: Pages
   }
 }
 .ct-grid {
-    stroke: rgba($dark,0.15);
+    stroke: rgba($white,0.15);
 }
 .ct-chart.simple-pie-chart-chartist {
   .ct-label {
@@ -1157,7 +1213,7 @@ File: Pages
     top: 50%;
     width: 21px;
     i {
-      color: $light5;
+      color: darken($dark,5%);
     }
   }
   .time-icon {
@@ -1187,7 +1243,7 @@ h3.timeline-title {
   .timeline-desk {
     .arrow {
       border-bottom: 8px solid transparent;
-      border-right: 8px solid $white !important;
+      border-right: 8px solid darken($dark,10%) !important;
       border-top: 8px solid transparent;
       display: block;
       height: 0;
@@ -1209,7 +1265,7 @@ h3.timeline-title {
   .timeline-desk {
     .arrow-alt {
       border-bottom: 8px solid transparent;
-      border-left: 8px solid $white !important;
+      border-left: 8px solid darken($dark,10%) !important;
       border-top: 8px solid transparent;
       display: block;
       height: 0;
@@ -1264,7 +1320,7 @@ h3.timeline-title {
     margin: 0;
   }
   .panel {
-    background: $white;
+    background: darken($dark,10%);
     display: block;
     margin-bottom: 5px;
     margin-left: 45px;
@@ -1281,7 +1337,6 @@ h3.timeline-title {
     }
   }
   p {
-    color: #999999;
     font-size: 14px;
     margin-bottom: 0;
   }
@@ -1318,7 +1373,7 @@ h3.timeline-title {
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-    color: #333333;
+    color: $muted;
     font-weight: 600;
     padding: 5px 10px;
     display: inline-block;
@@ -1334,14 +1389,11 @@ h3.timeline-title {
 }
 
 .thumb {
-  background-color: $white;
+  background-color: darken($dark,10%);
   border-radius: 3px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 10px;
   width: $width;
 }
 
@@ -1493,7 +1545,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-ar
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.right .hopscotch-bubble-arrow {
     border-left: 19px solid $primary;
-    left: -17px;
+    left: -2px;
 }
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow {
     border: none;
@@ -1548,7 +1600,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     font-size: 48px;
     font-family: $font-secondary;
     margin-bottom: 10px;
-    color: $dark;
+    color: $white;
   }
   .plan-duration {
     font-size: 13px;
@@ -1633,15 +1685,16 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   }
 }
 .kanban-box {
+  border: 2px solid darken($dark,5%);
   .checkbox-wrapper {
-    float: right;
+    float: left;
 
     .checkbox {
       margin-top: 3px;
     }
   }
   .kanban-detail {
-    margin-right: 35px;
+    margin-left: 35px;
 
     h4 {
       margin-top: 0px;
@@ -1649,8 +1702,8 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       font-weight: 500;
       font-family: $font-primary;
 
-      a{
-        color: $dark;
+      a {
+        color: $muted;
       }
     }
     ul {
@@ -1659,7 +1712,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
           display: inline-block;
           i {
             font-size: 16px;
-            color: $muted;
+            color: $white;
             padding: 0px 5px;
             line-height: 32px;
           }
@@ -1671,22 +1724,22 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 }
 
 .gu-mirror {
-  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba($dark,0.1) !important;
   margin-bottom: 0px !important;
   opacity: 1;
+  list-style: none;
 
   .card-box {
-    margin-bottom: 0px !important;
+    margin: 0px !important;
   }
 }
+
 
 /* Task Detail */
 .task-detail {
   .task-dates {
     li {
       width: 50%;
-      float: right;
+      float: left;
     }
   }
   .task-tags {
@@ -1731,10 +1784,10 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
 .project-sort-item {
   .form-group {
-    margin-left: 30px;
+    margin-right: 30px;
 
     &:last-of-type {
-      margin-left: 0px;
+      margin-right: 0px;
     }
   }
 }
@@ -1742,7 +1795,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   position: relative;
   .badge {
     position: absolute;
-    left: 20px;
+    right: 20px;
   }
   h4{
     text-overflow: ellipsis;
@@ -1755,7 +1808,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
   ul {
     li{
-      padding-left: 30px;
+      padding-right: 30px;
     }
   }
 
@@ -1765,7 +1818,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       display: inline-block;
 
       &:first-of-type {
-        margin-right: 0px;
+        margin-left: 0px;
       }
     }
   }
@@ -1776,12 +1829,13 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 ============= */
 
 .account-pages {
-  background: url("../images/big/bg1.jpg") center;
+  background: url("../images/big/bg.jpg") center;
   position: absolute;
   height: 100%;
   top: 0;
   width: 100%;
   background-size: cover;
+  border: 20px solid rgba($dark, 0.3);
 }
 .wrapper-page {
   margin: 5% auto;
@@ -1927,10 +1981,10 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   width: 240px;
   transition-duration: .3s;
   z-index: 5;
-  color: $dark;
+  color: $muted;
 
   a {
-    color: $dark;
+    color: $muted;
   }
 
   .menu-segment {
@@ -1953,10 +2007,10 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       text-transform: uppercase;
       font-weight: 600;
       padding: 10px 0;
-      color: #465162;
+      color: rgba($white,0.5);
 
       .icon {
-        float: left;
+        float: right;
       }
     }
   }
@@ -1992,7 +2046,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
   .menu-segment .labels.labels li a span,
   .menu-segment .chat.labels li a span {
-    float: left;
+    float: right;
   }
 
   .menu-segment .labels.chat li a span,
@@ -2031,18 +2085,18 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 #main {
   position: fixed;
   top: 72px;
-  right: 490px;
+  left: 490px;
   bottom: 0;
-  left: 0;
+  right: 0;
   z-index: 4;
   transition-duration: .3s;
-  background-color: $white;
+  background-color: darken($dark,10%);
 
   .overlay {
     position: absolute;
     top: 0;
-    right: -5px;
-    left: 0;
+    left: -5px;
+    right: 0;
     bottom: 100%;
     background: rgba($dark,0.6);
     z-index: 5;
@@ -2058,13 +2112,13 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
     .page-title {
       display: block;
-      float: right;
+      float: left;
 
       .sidebar-toggle-btn {
         width: 0;
         margin-top: 1px;
         padding: 11px 0 0 0;
-        float: right;
+        float: left;
         position: relative;
         display: block;
         cursor: pointer;
@@ -2087,7 +2141,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
           margin: 0;
           position: absolute;
           top: 15px;
-          right: -11px;
+          left: -11px;
           transform: rotate(-60deg);
         }
 
@@ -2096,7 +2150,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
           margin: 0;
           position: absolute;
           top: 21px;
-          right: -11px;
+          left: -11px;
           transform: rotate(60deg);
         }
 
@@ -2104,7 +2158,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
       .icon {
         font-size: 15px;
-        margin-right: 20px;
+        margin-left: 20px;
         position: relative;
         top: -5px;
         cursor: pointer;
@@ -2114,14 +2168,14 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     .search-box {
       width: 180px;
       height: 40px;
-      margin-right: 30px;
+      margin-left: 30px;
       position: relative;
 
       input {
         position: absolute;
         top: 0;
         transition-duration: .3s;
-        left: 0;
+        right: 0;
         bottom: 0;
         width: 100%;
         padding: 0;
@@ -2130,15 +2184,15 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         height: 40px;
         z-index: 2;
         outline: none;
-        color: #999;
+        color: $white;
         background: transparent;
-        border: 2px solid #EFEFEF;
+        border: 2px solid darken($dark,5%);
         border-radius: 5px;
         transition-timing-function: cubic-bezier(0.3, 1.5, 0.6, 1);
 
         &:focus {
-          color: #333;
-          border-color: #d6d6d6;
+          color: $white;
+          border-color: darken($dark,3%);
         }
 
         &:focus ~ .icon {
@@ -2152,7 +2206,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         transition-duration: .3s;
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         bottom: 0;
         width: 40px;
         text-align: center;
@@ -2171,7 +2225,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
   .message-list {
     display: block;
-    padding-right: 0;
+    padding-left: 0;
 
     li {
       position: relative;
@@ -2179,6 +2233,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       height: 50px;
       line-height: 50px;
       cursor: default;
+      color: rgba($muted, 0.6);
       transition-duration: .3s;
 
       &:hover {
@@ -2187,7 +2242,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       }
 
       .mail-col {
-        float: right;
+        float: left;
         position: relative;
       }
 
@@ -2198,7 +2253,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         .checkbox-wrapper-mail,
         .dot {
           display: block;
-          float: right;
+          float: left;
         }
 
         .dot {
@@ -2213,20 +2268,20 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
         .checkbox-wrapper-mail {
           margin-top: 15px;
-          margin-left: 10px;
+          margin-right: 10px;
         }
 
         .star-toggle {
           margin-top: 18px;
           font-size: 16px;
-          margin-right: 5px;
+          margin-left: 5px;
         }
 
         .title {
           position: absolute;
           top: 15px;
-          right: 140px;
-          left: 0;
+          left: 140px;
+          right: 0;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
@@ -2236,8 +2291,8 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       .mail-col-2 {
         position: absolute;
         top: 0;
-        right: 400px;
-        left: 0;
+        left: 400px;
+        right: 0;
         bottom: 0;
 
         .subject,
@@ -2247,17 +2302,17 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         }
 
         .subject {
-          right: 0;
-          left: 200px;
+          left: 0;
+          right: 200px;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
         }
 
         .date {
-          left: 0;
+          right: 0;
           width: 200px;
-          padding-right: 80px;
+          padding-left: 80px;
         }
       }
 
@@ -2274,7 +2329,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
     li.unread {
       font-weight: 600;
-      color: #555;
+      color: rgba($muted,0.95);
     }
 
     li.blue-dot .mail-col-1 .dot {
@@ -2327,11 +2382,11 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 #message {
   position: fixed;
   top: 72px;
-  right: 60%;
+  left: 60%;
   bottom: 0;
   width: 40%;
   z-index: 5;
-  transform: translateX(-200%);
+  transform: translateX(200%);
   transition-duration: .5s;
   padding: 20px 30px;
   background: $white;
@@ -2354,7 +2409,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     }
 
     .grey {
-      margin-right: 10px;
+      margin-left: 10px;
       color: #999;
     }
   }
@@ -2376,7 +2431,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         overflow: hidden;
 
         .left {
-          float: right;
+          float: left;
           font-weight: 600;
           color: #888;
           transition-duration: .3s;
@@ -2395,7 +2450,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
             &:after {
               position: absolute;
               top: -4px;
-              right: 100%;
+              left: 100%;
               height: 0;
               width: 0;
               border: inherit;
@@ -2412,7 +2467,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         }
 
         .right {
-          float: left;
+          float: right;
           color: #999;
         }
       }
@@ -2438,18 +2493,18 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       .tool-box {
         position: absolute;
         bottom: 0;
-        left: 0;
+        right: 0;
         border: 0px solid #DDDFE1;
         border-top-width: 1px;
-        border-right-width: 1px;
+        border-left-width: 1px;
         padding: 8px 10px;
         transition-duration: .3s;
 
         a {
-          margin-left: 10px;
+          margin-right: 10px;
         }
         a:last-child {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
     }
@@ -2484,7 +2539,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 }
 
 .show-message #main {
-  margin-left: 40%;
+  margin-right: 40%;
 }
 
 @media only screen and (min-width: 1499px) {
@@ -2495,11 +2550,11 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
 @media only screen and (max-width: 1500px) {
   .show-message #main {
-    margin-left: 0;
+    margin-right: 0;
   }
 
   .show-message #message {
-    right: 50%;
+    left: 50%;
     width: 50%;
   }
 }
@@ -2526,7 +2581,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   }
 
   #main {
-    right: 0;
+    left: 0;
     box-shadow: none;
   }
 
@@ -2534,7 +2589,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     margin-right: 20px;
     opacity: 1;
     width: 20px;
-    margin-right: 10px;
+    margin-left: 10px;
 
     .line {
       height: 2px;
@@ -2550,11 +2605,11 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   }
 
   .show-message #main {
-    margin-left: 0;
+    margin-right: 0;
   }
 
   .show-message #message {
-    right: 20%;
+    left: 20%;
     width: 80%;
   }
 }
@@ -2565,7 +2620,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
-    margin-right: 0;
+    margin-left: 0;
   }
   #main .action-bar {
     float: none;
@@ -2592,19 +2647,19 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
-    left: 120px;
+    left: 0;
+    right: 120px;
     width: auto;
   }
 
   #main .message-list li .mail-col-2 {
-    left: 0;
-    right: auto;
+    right: 0;
+    left: auto;
     width: 120px;
   }
 
   #main .message-list li .mail-col-2 .date {
-    padding-right: 0;
+    padding-left: 0;
     position: static;
   }
 
@@ -2649,7 +2704,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   background: rgba($muted, 0.1);
   position: absolute;
   width: 7px;
-  left: 8px;
+  right: 8px;
   top: 8px;
   bottom: 8px;
   visibility: hidden \9;
@@ -2702,8 +2757,8 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 .profile-info-name {
   img {
     width: 200px;
-    float: right;
-    margin-left: 30px;
+    float: left;
+    margin-right: 30px;
   }
 }
 .profile-info-detail {
@@ -2712,10 +2767,15 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 .profile-pills {
   li{
     a{
-      color: rgba($dark,0.5) !important;
+      color: rgba($white,0.5) !important;
       padding: 0 10px;
       display: block;
       line-height: 30px !important;
+
+      &:hover {
+        background-color: transparent;
+        color: $white !important;
+      }
 
       i {
         font-size: 14px;
@@ -2736,17 +2796,17 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       border-radius: 3px;
       background-clip: padding-box;
       display: block;
-      float: right;
+      float: left;
       height: 32px;
       width: 32px;
   }
   .comment-body {
       float: none;
-      margin-right: 40px;
+      margin-left: 40px;
       position: relative;
   }
   .comment-text {
-      border: 1px solid #e5e5e5;
+      border: 1px solid darken($dark,2%);
       border-radius: 2px;
       padding: 7px 12px 8px;
   }
@@ -2755,14 +2815,14 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       padding-bottom: 2px;
 
     a{
-      color: $dark;
+      color: lighten($muted,15%);
       font-weight: bold;
     }
     span {
       color: $muted;
       display: inline-block;
       font-size: 11px;
-      margin-right: 5px;
+      margin-left: 5px;
     }
   }
   .comment-footer {
@@ -2776,7 +2836,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     }
   }
   .comment-footer, .comment-footer a {
-    color: rgba($dark, 0.5);
+    color: lighten($muted,5%);
 
     &:hover {
       color: $custom;
@@ -2784,5 +2844,5 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   }
 }
 .comment>.comment {
-  margin-right: 32px !important;
+  margin-left: 32px !important;
 }

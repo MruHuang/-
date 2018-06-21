@@ -24,22 +24,23 @@ File: Core
 ============= */
 
 body {
-  background: $light5;
+  background: darken($dark,15%);
   font-family: $font-primary;
   margin: 0;
   padding-bottom: 60px;
-  padding-right: 0 !important;
   overflow-x: hidden;
+  color: $muted;
   font-size: $base-font-size;
 }
 html {
     position: relative;
     min-height: 100%;
-    background: $light5;
+    background: darken($dark,15%);
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-family: $font-secondary;
+  color: rgba($white,0.9);
 }
 
 h1 {
@@ -107,6 +108,10 @@ a {
   }
 }
 
+hr {
+  border-top: 1px solid rgba($white, 0.1);
+}
+
 .container {
   width: auto;
 }
@@ -126,8 +131,8 @@ a {
   text-align:left !important;
   padding: 19px 30px 20px;
   position: absolute;
-  left: 0px;
-  right: 250px;
+  right: 0px;
+  left: 250px;
 }
 
 #wrapper {
@@ -185,22 +190,22 @@ a {
   padding-right: 10px;
 }
 .m-r-5 {
-  margin-left: 5px !important;
-}
-.m-r-10 {
-  margin-left: 10px !important;
-}
-.m-r-15 {
-  margin-left: 15px !important;
-}
-.m-l-5 {
   margin-right: 5px !important;
 }
-.m-l-10 {
+.m-r-10 {
   margin-right: 10px !important;
 }
-.m-l-15 {
+.m-r-15 {
   margin-right: 15px !important;
+}
+.m-l-5 {
+  margin-left: 5px !important;
+}
+.m-l-10 {
+  margin-left: 10px !important;
+}
+.m-l-15 {
+  margin-left: 15px !important;
 }
 .m-t-5 {
   margin-top: 5px !important;
@@ -350,7 +355,8 @@ a {
   box-shadow: 0 0px 8px 0 rgba(0,0,0,0.06),0 1px 0px 0 rgba(0,0,0,0.02);
   border-radius: 5px;
   margin-bottom: 20px;
-  background-color: $white;
+  background-color: darken($dark,10%);
+
 
   .card-drop {
     color: $muted;
@@ -376,7 +382,7 @@ a {
     cursor: pointer;
     line-height: 45px;
     white-space: nowrap;
-    color: #75798B;
+    color: $muted;
     text-overflow: ellipsis;
     display: block;
     overflow: hidden;
@@ -615,7 +621,10 @@ a {
 }
 
 .text-dark {
-  color: $lightdark7 !important;
+  color: $light3 !important;
+}
+a.text-dark:focus, a.text-dark:hover {
+  color: $light3 !important;
 }
 
 
@@ -628,11 +637,12 @@ textarea.form-control {
   min-height: 90px;
 }
 .form-control {
-    background-color: $white;
-    border: 1px solid #E3E3E3;
+    background-color: darken($dark,7%);
+    border: 2px solid darken($dark,1%);
     border-radius: 4px;
     font-size: $base-font-size;
     max-width: 100%;
+    color: $white;
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-transition: all 300ms linear;
@@ -642,12 +652,53 @@ textarea.form-control {
     transition: all 300ms linear;
 
   &:focus {
-    background-color: $white;
-    border: 1px solid #AAAAAA;
+    background-color: darken($dark,7%);
+    border: 2px solid lighten($dark,3%);
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: 0 !important;
+    color: $white;
   }
+}
+
+input.form-control::-webkit-input-placeholder,textarea.form-control::-webkit-input-placeholder {
+  color: rgba($white, 0.3);
+  font-weight: normal;
+}
+input.form-control:-moz-placeholder,textarea.form-control:-moz-placeholder {
+  color: rgba($white, 0.3);
+  font-weight: normal;
+}
+input.form-control::-moz-placeholder,textarea.form-control::-moz-placeholder {
+  color: rgba($white, 0.3);
+  font-weight: normal;
+}
+input.form-control:-ms-input-placeholder,textarea.form-control:-ms-input-placeholder {
+  color: rgba($white, 0.3);
+  font-weight: normal;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: darken($dark,5%);
+  opacity: 1;
+}
+
+.input-group-text {
+  background-color: darken($dark,3%);
+  border-color: darken($dark,3%);
+  color: $white;
+}
+
+.form-control-plaintext {
+  color: $muted;
+}
+
+.custom-control-label::before {
+  background-color: darken($dark,3%);
+}
+
+.custom-control-input:active~.custom-control-label::before {
+  background-color: darken($dark,3%);
 }
 
 .input-lg {
@@ -752,14 +803,19 @@ select[multiple] {
 
 .pagination > li > a,
 .pagination > li > span {
-   color: #636e7b;
+   color: $muted;
+   background-color: darken($dark,7%);
+   border-color: lighten($dark,2%);
 }
 
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
-.pagination > li > span:focus {
-   background-color: #e4e7ea;
+.pagination > li > span:focus,
+.page-item.disabled .page-link {
+  color: $white;
+   background-color: lighten($dark,2%);
+   border-color: lighten($dark,2%);
 }
 
 .pagination-split li {
@@ -799,7 +855,7 @@ select[multiple] {
 /* Tabs */
 .tab-content {
   padding: 20px;
-  border: 2px solid $light;
+  border: 2px solid darken($dark,5%);
   border-top: none;
 }
 .nav-tabs>.active>a, .nav-tabs>.active>a:focus, .nav-tabs>.active>a:hover {
@@ -807,14 +863,14 @@ select[multiple] {
   border-bottom-color: $white !important;
 }
 .nav-tabs {
-  border-bottom: 2px solid $light;
+  border-bottom: 2px solid darken($dark,5%);
 }
 .nav-tabs>li {
   margin-bottom: -2px;
 }
 .nav-tabs {
   a {
-    color: $dark;
+    color: $muted;
     font-size: 15px;
     font-weight: 600;
     font-family: $font-secondary;
@@ -827,13 +883,23 @@ select[multiple] {
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
   border-color: $light;
 }
-
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  color: $light;
+  background-color: darken($dark,5%) !important;
+  border-color: darken($dark,5%) darken($dark,5%) darken($dark,5%) !important;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  color: $light;
+  background-color: darken($dark,10%);
+  border-color: darken($dark,10%) darken($dark,10%) darken($dark,10%);
+}
 /* List group */
 
 .list-group-item {
-  border: 1px solid $light5;
+  border: 1px solid darken($dark,5%);
   border-left: none;
   border-right: none;
+  background-color: darken($dark,10%);
 
   &:hover {
     background-color: rgba($muted, 0.1);
@@ -857,7 +923,6 @@ select[multiple] {
 .dropcap {
   font-size: 3.1em;
 }
-
 .dropcap, .dropcap-circle, .dropcap-square {
   display: block;
   float: left;
@@ -865,6 +930,12 @@ select[multiple] {
   line-height: 36px;
   margin-right: 6px;
   text-shadow: none;
+}
+
+/* Image thumbnail */
+.img-thumbnail {
+  background-color: darken($dark,5%);
+  border-color: darken($dark,1%)
 }
 
 /* Alert */
@@ -901,12 +972,14 @@ select[multiple] {
     .modal-content {
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
-      border-color: #DDDDDD;
+      background-color: darken($dark,10%);
+      border-color: darken($dark,5%);
       border-radius: 2px;
       box-shadow: none;
       padding: 25px;
+
       .modal-header {
-        border-bottom-width: 2px;
+        border-bottom: 2px solid darken($dark,5%);
         margin: 0;
         padding: 0;
         padding-bottom: 15px;
@@ -916,10 +989,19 @@ select[multiple] {
       }
       .modal-footer {
         padding: 0;
+        border-top: 2px solid darken($dark,5%);
         padding-top: 15px;
       }
     }
   }
+}
+
+.close {
+  color: $muted;
+}
+
+.modal-title {
+  margin-top: 0;
 }
 
 .modal-full {
@@ -949,7 +1031,7 @@ select[multiple] {
     .close {
       position: absolute;
       top: 15px;
-      left: 25px;
+      right: 25px;
       color: $light;
     }
 }
@@ -960,7 +1042,7 @@ select[multiple] {
     font-size: 18px;
     background-color: #36404a;
     color: $white;
-    text-align: right;
+    text-align: left;
     margin: 0px;
 }
 .custom-modal-text {
@@ -1057,15 +1139,17 @@ select[multiple] {
 
 /* Code */
 code {
-    color: $primary;
-    background-color: $lightdark;
+    color: $dark;
+    background-color: rgba($lightdark,0.5);
     border-radius: 4px;
 }
 
 /* Pre */
 pre{
-  background-color: $lightdark;
-  border: 1px solid #D4D8DA;
+  background-color: darken($dark,7%);
+  border: 1px solid darken($dark,5%);
+  padding: 20px;
+  color: $muted;
 }
 
 /* Carousel */
@@ -1299,109 +1383,10 @@ pre{
     padding-top: 0;
   }
   .content-page {
-    margin-right: 0 !important;
+    margin-left: 0 !important;
     margin-top: 0;
   }
 
 }
 
 
-// RTL Only
-
-html {
-  direction: rtl;
-}
-
-body {
-  text-align: right;
-}
-
-.dropdown-toggle::after {
-  margin-left: 0;
-  margin-right: .255em;
-}
-
-.list-inline,.list-group,ul {
-  padding-right: 0;
-}
-
-.float-left,.pull-left,.breadcrumb-item {
-  float: right !important;
-}
-
-.float-right,.pull-right,.close  {
-  float: left !important;
-}
-
-.text-left,th,.table,.header-title,.header-title + p ,.dropdown-item,.card-box,
-.select2-container--default .select2-results>.select2-results__options,
-.dropzone {
-  text-align: right !important;
-}
-
-.text-right {
-  text-align: left !important;
-}
-
-.btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child),.page-item:last-child .page-link,
-.input-group .form-control:not(:first-child), .input-group-addon:not(:first-child), .input-group-btn:not(:first-child)>.btn,
-.input-group-btn:not(:first-child)>.btn-group>.btn, .input-group-btn:not(:first-child)>.dropdown-toggle,
-.input-group-btn:not(:last-child)>.btn-group:not(:first-child)>.btn, .input-group-btn:not(:last-child)>.btn:not(:first-child),
-.input-group>.input-group-append>.btn, .input-group>.input-group-append>.input-group-text, .input-group>.input-group-prepend:first-child>.btn:not(:first-child), .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), .input-group>.input-group-prepend:not(:first-child)>.btn, .input-group>.input-group-prepend:not(:first-child)>.input-group-text{
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: .25rem;
-  border-bottom-left-radius: .25rem;
-}
-.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle),.page-item:first-child .page-link,
-.input-group .form-control:not(:last-child), .input-group-addon:not(:last-child), .input-group-btn:not(:first-child)>.btn-group:not(:last-child)>.btn,
-.input-group-btn:not(:first-child)>.btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:not(:last-child)>.btn,
-.input-group-btn:not(:last-child)>.btn-group>.btn, .input-group-btn:not(:last-child)>.dropdown-toggle,
-.input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), .input-group>.input-group-append:not(:last-child)>.btn, .input-group>.input-group-append:not(:last-child)>.input-group-text, .input-group>.input-group-prepend>.btn, .input-group>.input-group-prepend>.input-group-text{
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: .25rem;
-  border-bottom-right-radius: .25rem;
-}
-
-.modal-footer>:not(:last-child) {
-  margin-left: .25rem;
-}
-dd {
-  margin-right: 0;
-}
-
-.input-group-addon:not(:last-child) {
-  border-right: 1px solid rgba(0,0,0,.15);
-  border-left: 0;
-}
-
-.form-check-inline {
-  margin-right: 0;
-  margin-left: .75rem;
-}
-.form-check {
-  padding-right: 1.25rem;
-  padding-left: 0;
-}
-.form-check-input {
-  margin-right: -1.25rem;
-  margin-left: 0;
-}
-.custom-control {
-  padding-right: 1.5rem;
-  padding-left: 0;
-}
-.custom-control-label::before,.custom-control-label::after {
-  left: auto;
-  right: 0;
-}
-
-.modal-header .close {
-  margin: -1rem auto -1rem -1rem;
-}
-
-.mr-3, .mx-3 {
-  margin-left: 1rem!important;
-  margin-right: 0 !important;
-}
