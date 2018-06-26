@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="images/Sinica.svg.png">
+
+        <title>學術服務系統</title>
+
+        <!--Morris Chart CSS -->
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+
+        <!-- App css -->
+        
+        <link type="text/css" href="style.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+    </head>
+
+
+    <body class="fixed-left">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <a href="index.html" class="logo"><span>學術服務<span>系統</span></span><i class="mdi mdi-layers"></i></a>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+
+                        <!-- Page title -->
+                        <ul class="nav navbar-nav list-inline navbar-left">
+                            <li class="list-inline-item">
+                                <button class="button-menu-mobile open-left">
+                                    <i class="mdi mdi-menu"></i>
+                                </button>
+                            </li>
+                            <li class="list-inline-item">
+                                <h4 class="page-title">學術服務系統</h4>
+                            </li>
+                        </ul>
+
+                        <nav class="navbar-custom">
+
+                            <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+                                <li>
+                                    <!-- Notification -->
+                                    <div class="notification-box">
+                                        <ul class="list-inline mb-0">
+                                            <li>
+                                                <a href="javascript:void(0);" class="right-bar-toggle">
+                                                    <i class="ti-user"></i>
+                                                </a>
+                                                <div class="noti-dot offline">
+                                                    <span class="dot"></span>
+                                                    <span class="pulse"></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Notification bar -->
+                                </li>
+
+                                <!-- <li class="hide-phone">
+                                    <form class="app-search">
+                                        <input type="date" placeholder="Search..."
+                                               class="form-control">
+                                        <button type="submit"  class="btn btn-success btn-rounded form-control">登入<i class="fa fa-search"></i></button>
+                                    </form>
+                                </li> -->
+
+                            </ul>
+                        </nav>
+                    </div><!-- end container -->
+                </div><!-- end navbar -->
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+
+                    <!-- User -->
+                    <div class="user-box">
+                        <div class="user-img">
+                            <img src="images/Sinica.svg.png" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive">
+                            <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
+                        </div>
+                        <h5><a href="#">某某院士</a> </h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" >
+                                    <i class="mdi mdi-settings"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" class="text-custom">
+                                    <i class="mdi mdi-power"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End User -->
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <ul>
+                        	<li class="text-muted menu-title">學術服務項目</li>
+
+                            <li>
+                                <a href="index.html" class="waves-effect">
+                                    <i class="mdi mdi-view-dashboard"></i>
+                                    <span> 博士後研究學者申請案 </span>
+                                </a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect">
+                                    <i class="mdi mdi-format-font"></i>
+                                    <span> 中央研究院年輕學者研究著作獎 </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">最新資訊</a></li>
+                                    <li> <a href="#">申請</a></li>
+                                    <li> <a href="#">歷史資料區</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect">
+                                    <i class="mdi mdi-invert-colors"></i>
+                                    <span> 中央研究院年輕學者研究著作獎 </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">最新資訊</a></li>
+                                    <li> <a href="#">申請</a></li>
+                                    <li> <a href="#">歷史資料區</a></li>     
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-texture"></i><span class="badge badge-warning pull-right">New</span><span> 人文及社會科學學術性專書獎 </span><span class="menu-arrow"></span> </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">最新資訊</a></li>
+                                    <li> <a href="#">申請</a></li>
+                                    <li> <a href="#">歷史資料區</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+            <!-- Left Sidebar End -->
+
+
+
+  <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <!-- Row start -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="row">
+                                        <div class="col-xl-12 mt-md-3">
+                                            <div class="phase reserve">
+                                            <ul class="step02" role="progressbar">
+                                                <li><span>主持人個人資料</span></li>
+                                                <li><span>主持人名單</span></li>
+                                                <li><span>分支計畫順序</span></li>
+                                                <li><span>計畫基本資料</span></li>
+                                            </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                         <!-- Row start -->
+                        <div class="">
+                            <div class="col-md-12">
+                                <div class="card-box">
+
+                                    <div class="card-box table-responsive">
+                                                                <h4 class="m-t-0 header-title">主持人名單</h4>
+                                                                <p class="text-muted font-14 m-b-30">
+                                                                    請點選 [登入] 以填寫／瀏覽該名單內容。.
+                                                                </p>
+
+                                                                <table class="table table-bordered" id="datatable">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>主持人角色</th>
+                                                                        <th>主持人名稱</th>
+                                                                        <th>填寫</th>
+                                                                        <th>填寫狀態</th>
+                                                                    </tr>
+                                                                    </thead>
+
+
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>計畫總主持人</td>
+                                                                        <td>院士A</td>
+                                                                        <td><a class="btn btn-primary waves-effect waves-light" type="submit" href="program_list.html">登入</a></td>
+                                                                        <td>申請案已送出</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>計畫總主持人</td>
+                                                                        <td>院士B</td>
+                                                                        <td><button class="btn btn-primary waves-effect waves-light" type="submit">登入</button></td>
+                                                                        <td>申請案未填寫完成</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>計畫主持人</td>
+                                                                        <td>院士C</td>
+                                                                        <td><button class="btn btn-primary waves-effect waves-light" type="submit">登入</button></td>
+                                                                        <td>申請案已送出</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>共同主持人</td>
+                                                                        <td>院士D</td>
+                                                                        <td><button class="btn btn-primary waves-effect waves-light" type="submit">登入</button></td>
+                                                                        <td>申請案未填寫完成</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End of Row -->
+                        
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+               
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+            <!-- Right Sidebar -->
+            <div class="side-bar right-bar">
+                <a href="javascript:void(0);" class="right-bar-toggle">
+                    <i class="mdi mdi-close-circle-outline"></i>
+                </a>
+                <h4 class="">Notifications</h4>
+                <div class="notification-list nicescroll">
+                    <ul class="list-group list-no-border user-list">
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-2.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">Michael Zenaty</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">2 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-info">
+                                    <i class="mdi mdi-account"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">New Signup</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">5 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-pink">
+                                    <i class="mdi mdi-comment"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">New Message received</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-3.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">James Anderson</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">2 days ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="#" class="user-list-item">
+                                <div class="icon bg-warning">
+                                    <i class="mdi mdi-settings"></i>
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">Settings</span>
+                                    <span class="desc">There are new settings available</span>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /Right-bar -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <!-- KNOB JS -->
+        <!--[if IE]>
+        <script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+        <![endif]-->
+        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+        <!--Morris Chart-->
+		<script src="assets/plugins/morris/morris.min.js"></script>
+		<script src="assets/plugins/raphael/raphael-min.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="assets/pages/jquery.dashboard.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+         <!-- Required datatable js -->
+        <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                // Default Datatable
+                $('#datatable').DataTable();
+                
+                $('#datatable2').DataTable();
+
+                //Buttons examples
+                var table = $('#datatable-buttons').DataTable({
+                    lengthChange: false,
+                    buttons: ['copy', 'excel', 'pdf']
+                });
+
+                // Key Tables
+
+                $('#key-table').DataTable({
+                    keys: true
+                });
+
+                // Responsive Datatable
+                $('#responsive-datatable').DataTable();
+
+                // Multi Selection Datatable
+                $('#selection-datatable').DataTable({
+                    select: {
+                        style: 'multi'
+                    }
+                });
+
+                table.buttons().container()
+                    .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+            });
+
+        </script>
+    </body>
+</html>
