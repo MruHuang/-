@@ -90,8 +90,8 @@
   border: 1px solid $inverse !important;
 }
 .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active, .btn-inverse.active, .btn-inverse.focus, .btn-inverse:active, .btn-inverse:focus, .btn-inverse:hover, .open > .dropdown-toggle.btn-inverse {
-  background-color: lighten($inverse, 5%) !important;
-  border: 1px solid lighten($inverse, 5%) !important;
+  background-color: darken($inverse, 5%) !important;
+  border: 1px solid darken($inverse, 5%) !important;
 }
 
 .btn-purple {
@@ -207,9 +207,9 @@
 }
 
 .btn-trans.btn-inverse {
-  border: 1px solid rgba($light, 0.1) !important;
-  background-color: rgba($light, 0.15) !important;
-  color: $muted !important;
+  border: 1px solid rgba($inverse, 0.1) !important;
+  background-color: rgba($inverse, 0.15) !important;
+  color: $inverse !important;
 }
 
 .btn-trans.btn-purple {
@@ -311,9 +311,9 @@
     &::before {
       -o-transition: 0.3s ease-in-out;
       -webkit-transition: 0.3s ease-in-out;
-      background-color: darken($dark,10%);
+      background-color: $white;
       border-radius: 3px;
-      border: 2px solid lighten($dark,5%);
+      border: 1px solid $muted;
       content: "";
       display: inline-block;
       height: 17px;
@@ -499,11 +499,11 @@
 .checkbox-inverse {
   input[type="checkbox"]:checked + label {
     &::before {
-      background-color: $white;
-      border-color: $white;
+      background-color: $inverse;
+      border-color: $inverse;
     }
     &::after {
-      color: $dark;
+      color: $white;
     }
   }
 }
@@ -521,9 +521,9 @@
     &::before {
       -o-transition: border 0.5s ease-in-out;
       -webkit-transition: border 0.5s ease-in-out;
-      background-color: darken($dark,10%);
+      background-color: $white;
       border-radius: 50%;
-      border: 2px solid lighten($dark,5%);
+      border: 1px solid $muted;
       content: "";
       display: inline-block;
       height: 17px;
@@ -737,16 +737,8 @@
 /* =============
    Cards
 ============= */
-.card {
-  background-color: darken($dark,10%);
-  border-color: darken($dark,5%);
-}
 .card-title,.card-header {
   margin-top: 0;
-  border: none !important;
-}
-.card-header {
-  background-color: darken($dark,5%);
 }
 
 
@@ -764,7 +756,7 @@
 
 .progress {
   -webkit-box-shadow: none !important;
-  background-color: darken($dark,5%);
+  background-color: $light5;
   box-shadow: none !important;
   height: 10px;
   margin-bottom: 18px;
@@ -823,7 +815,7 @@
 }
 
 .progress-bar-inverse {
-  background-color: $light;
+  background-color: $inverse;
 }
 
 .progress-bar-purple {
@@ -944,13 +936,13 @@
 .table > thead > tr > th.active, .table > tbody > tr > th.active, .table > tfoot > tr > th.active,
 .table > thead > tr.active > td, .table > tbody > tr.active > td, .table > tfoot > tr.active > td,
 .table > thead > tr.active > th, .table > tbody > tr.active > th, .table > tfoot > tr.active > th {
-    background-color: darken($dark,7%) !important;
+    background-color: $lightdark !important;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th,
 .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td ,
 .table > thead > tr > th, .table-bordered{
-    border-color: darken($dark,7%);
+    border-color: $light5;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -958,15 +950,15 @@
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border-color: darken($dark,7%);
+  border-color: $light5;
 }
 .table > thead > tr > th {
     vertical-align: bottom;
-    border-color: darken($dark,7%);
+    border-color: $light5;
 }
 
 .table-bordered {
-  border-color: darken($dark,7%);
+    border-color: $light5;
 }
 
 .table-dark td, .table-dark th, .table-dark thead th {
@@ -1202,7 +1194,7 @@ table.dataTable th.focus, table.dataTable td.focus {
 
 /* Tablesaw */
 .tablesaw thead {
-  background: darken($dark,5%);
+  background: $light5;
   background-image: none;
   border: none;
 }
@@ -1218,13 +1210,7 @@ table.dataTable th.focus, table.dataTable td.focus {
   font-weight: 600;
   font-family: inherit;
   border: none;
-  color: $white;
 }
-
-.tablesaw-bar .tablesaw-toolbar select,.tablesaw-enhanced .tablesaw-bar .btn.btn-select {
-  color: $muted;
-}
-
 .tablesaw td, .tablesaw tbody th {
   font-size: inherit;
   line-height: inherit;
@@ -1249,7 +1235,6 @@ table.dataTable th.focus, table.dataTable td.focus {
 }
 .tablesaw-swipe .tablesaw-cell-persist {
   box-shadow: none;
-  border-color: darken($dark,7%);
 }
 .tablesaw-enhanced .tablesaw-bar .btn {
   text-shadow: none;
@@ -1266,10 +1251,6 @@ table.dataTable th.focus, table.dataTable td.focus {
   outline: none !important;
   box-shadow: none !important;
   background-image: none;
-}
-.tablesaw-toolbar label {
-  color: $white;
-  font-weight: 700;
 }
 
 /* =============
@@ -1322,7 +1303,7 @@ table.dataTable th.focus, table.dataTable td.focus {
 
 .inbox-widget {
   .inbox-item {
-    border-bottom: 1px solid rgba($white,0.1);
+    border-bottom: 1px solid $light3;
     overflow: hidden;
     padding: 10px 0;
     position: relative;
@@ -1336,7 +1317,7 @@ table.dataTable th.focus, table.dataTable td.focus {
       width: 40px;
     }
     .inbox-item-author {
-      color: rgba($white, 0.7);
+      color: $lightdark3;
       display: block;
       margin: 0;
     }

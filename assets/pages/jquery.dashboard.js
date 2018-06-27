@@ -22,9 +22,8 @@
             labels: labels,
             hideHover: 'auto',
             resize: true, //defaulted to true
-            gridLineColor: '#2f3e47',
+            gridLineColor: '#eeeeee',
             barSizeRatio: 0.2,
-            gridTextColor: '#98a6ad',
             barColors: lineColors
         });
     },
@@ -41,11 +40,10 @@
           pointFillColors: Pfillcolor,
           pointStrokeColors: Pstockcolor,
           behaveLikeLine: true,
-          gridLineColor: '#2f3e47',
+          gridLineColor: '#eef0f2',
           hideHover: 'auto',
           resize: true, //defaulted to true
           pointSize: 0,
-          gridTextColor: '#98a6ad',
           lineColors: lineColors
         });
     },
@@ -56,9 +54,7 @@
             element: element,
             data: data,
             resize: true, //defaulted to true
-            colors: colors,
-            backgroundColor: '#2f3e47',
-            labelColor: '#fff'
+            colors: colors
         });
     },
     

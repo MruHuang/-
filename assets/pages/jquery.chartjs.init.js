@@ -12,8 +12,6 @@ File: Chartjs
     var ChartJs = function() {};
 
     ChartJs.prototype.respChart = function(selector,type,data, options) {
-        //default config
-        Chart.defaults.global.defaultFontColor = "rgba(255,255,255,0.5)";
         // get selector by context
         var ctx = selector.get(0).getContext("2d");
         // pointing parent container to make chart js inherit its width
@@ -85,18 +83,10 @@ File: Chartjs
         var lineOpts = {
             scales: {
                 yAxes: [{
-                    gridLines: {
-                        color: "rgba(255,255,255,0.05)"
-                    },
                     ticks: {
                         max: 100,
                         min: 20,
                         stepSize: 10
-                    }
-                }],
-                xAxes: [{
-                    gridLines: {
-                        color: "rgba(255,255,255,0.05)"
                     }
                 }]
             }
@@ -171,27 +161,7 @@ File: Chartjs
                 }
             ]
         };
-        var barOpts = {
-            scales: {
-                yAxes: [{
-                    gridLines: {
-                        color: "rgba(255,255,255,0.05)"
-                    },
-                    ticks: {
-                        max: 100,
-                        min: 20,
-                        stepSize: 10
-                    }
-                }],
-                xAxes: [{
-                    gridLines: {
-                        color: "rgba(255,255,255,0.05)"
-                    }
-                }]
-            }
-        };
-
-        this.respChart($("#bar"),'Bar',barChart, barOpts);
+        this.respChart($("#bar"),'Bar',barChart);
 
 
         //radar chart
@@ -220,14 +190,7 @@ File: Chartjs
                 }
             ]
         };
-        var polarRadarOpts = {
-            scale: {
-                ticks: {
-                    backdropColor: '#253138'
-                }
-            }
-        };
-        this.respChart($("#radar"),'Radar',radarChart, polarRadarOpts);
+        this.respChart($("#radar"),'Radar',radarChart);
 
         //Polar area chart
         var polarChart = {
@@ -257,7 +220,7 @@ File: Chartjs
                 "Series 5"
             ]
         };
-        this.respChart($("#polarArea"),'PolarArea',polarChart, polarRadarOpts);
+        this.respChart($("#polarArea"),'PolarArea',polarChart);
     },
     $.ChartJs = new ChartJs, $.ChartJs.Constructor = ChartJs
 

@@ -24,23 +24,21 @@ File: Core
 ============= */
 
 body {
-  background: darken($dark,15%);
+  background: $light5;
   font-family: $font-primary;
   margin: 0;
   padding-bottom: 60px;
   overflow-x: hidden;
-  color: $muted;
   font-size: $base-font-size;
 }
 html {
     position: relative;
     min-height: 100%;
-    background: darken($dark,15%);
+    background: $light5;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-family: $font-secondary;
-  color: rgba($white,0.9);
 }
 
 h1 {
@@ -106,10 +104,6 @@ a {
     outline: 0;
     text-decoration: none;
   }
-}
-
-hr {
-  border-top: 1px solid rgba($white, 0.1);
 }
 
 .container {
@@ -355,8 +349,7 @@ hr {
   box-shadow: 0 0px 8px 0 rgba(0,0,0,0.06),0 1px 0px 0 rgba(0,0,0,0.02);
   border-radius: 5px;
   margin-bottom: 20px;
-  background-color: darken($dark,10%);
-
+  background-color: $white;
 
   .card-drop {
     color: $muted;
@@ -382,7 +375,7 @@ hr {
     cursor: pointer;
     line-height: 45px;
     white-space: nowrap;
-    color: $muted;
+    color: #75798B;
     text-overflow: ellipsis;
     display: block;
     overflow: hidden;
@@ -621,10 +614,7 @@ hr {
 }
 
 .text-dark {
-  color: $light3 !important;
-}
-a.text-dark:focus, a.text-dark:hover {
-  color: $light3 !important;
+  color: $lightdark7 !important;
 }
 
 
@@ -637,12 +627,11 @@ textarea.form-control {
   min-height: 90px;
 }
 .form-control {
-    background-color: darken($dark,7%);
-    border: 2px solid darken($dark,1%);
+    background-color: $white;
+    border: 1px solid #E3E3E3;
     border-radius: 4px;
     font-size: $base-font-size;
     max-width: 100%;
-    color: $white;
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-transition: all 300ms linear;
@@ -652,53 +641,12 @@ textarea.form-control {
     transition: all 300ms linear;
 
   &:focus {
-    background-color: darken($dark,7%);
-    border: 2px solid lighten($dark,3%);
+    background-color: $white;
+    border: 1px solid #AAAAAA;
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: 0 !important;
-    color: $white;
   }
-}
-
-input.form-control::-webkit-input-placeholder,textarea.form-control::-webkit-input-placeholder {
-  color: rgba($white, 0.3);
-  font-weight: normal;
-}
-input.form-control:-moz-placeholder,textarea.form-control:-moz-placeholder {
-  color: rgba($white, 0.3);
-  font-weight: normal;
-}
-input.form-control::-moz-placeholder,textarea.form-control::-moz-placeholder {
-  color: rgba($white, 0.3);
-  font-weight: normal;
-}
-input.form-control:-ms-input-placeholder,textarea.form-control:-ms-input-placeholder {
-  color: rgba($white, 0.3);
-  font-weight: normal;
-}
-
-.form-control:disabled, .form-control[readonly] {
-  background-color: darken($dark,5%);
-  opacity: 1;
-}
-
-.input-group-text {
-  background-color: darken($dark,3%);
-  border-color: darken($dark,3%);
-  color: $white;
-}
-
-.form-control-plaintext {
-  color: $muted;
-}
-
-.custom-control-label::before {
-  background-color: darken($dark,3%);
-}
-
-.custom-control-input:active~.custom-control-label::before {
-  background-color: darken($dark,3%);
 }
 
 .input-lg {
@@ -803,19 +751,14 @@ select[multiple] {
 
 .pagination > li > a,
 .pagination > li > span {
-   color: $muted;
-   background-color: darken($dark,7%);
-   border-color: lighten($dark,2%);
+   color: #636e7b;
 }
 
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
-.pagination > li > span:focus,
-.page-item.disabled .page-link {
-  color: $white;
-   background-color: lighten($dark,2%);
-   border-color: lighten($dark,2%);
+.pagination > li > span:focus {
+   background-color: #e4e7ea;
 }
 
 .pagination-split li {
@@ -855,7 +798,7 @@ select[multiple] {
 /* Tabs */
 .tab-content {
   padding: 20px;
-  border: 2px solid darken($dark,5%);
+  border: 2px solid $light;
   border-top: none;
 }
 .nav-tabs>.active>a, .nav-tabs>.active>a:focus, .nav-tabs>.active>a:hover {
@@ -863,14 +806,14 @@ select[multiple] {
   border-bottom-color: $white !important;
 }
 .nav-tabs {
-  border-bottom: 2px solid darken($dark,5%);
+  border-bottom: 2px solid $light;
 }
 .nav-tabs>li {
   margin-bottom: -2px;
 }
 .nav-tabs {
   a {
-    color: $muted;
+    color: $dark;
     font-size: 15px;
     font-weight: 600;
     font-family: $font-secondary;
@@ -883,23 +826,13 @@ select[multiple] {
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
   border-color: $light;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
-  color: $light;
-  background-color: darken($dark,5%) !important;
-  border-color: darken($dark,5%) darken($dark,5%) darken($dark,5%) !important;
-}
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  color: $light;
-  background-color: darken($dark,10%);
-  border-color: darken($dark,10%) darken($dark,10%) darken($dark,10%);
-}
+
 /* List group */
 
 .list-group-item {
-  border: 1px solid darken($dark,5%);
+  border: 1px solid $light5;
   border-left: none;
   border-right: none;
-  background-color: darken($dark,10%);
 
   &:hover {
     background-color: rgba($muted, 0.1);
@@ -923,6 +856,7 @@ select[multiple] {
 .dropcap {
   font-size: 3.1em;
 }
+
 .dropcap, .dropcap-circle, .dropcap-square {
   display: block;
   float: left;
@@ -930,12 +864,6 @@ select[multiple] {
   line-height: 36px;
   margin-right: 6px;
   text-shadow: none;
-}
-
-/* Image thumbnail */
-.img-thumbnail {
-  background-color: darken($dark,5%);
-  border-color: darken($dark,1%)
 }
 
 /* Alert */
@@ -972,14 +900,12 @@ select[multiple] {
     .modal-content {
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
-      background-color: darken($dark,10%);
-      border-color: darken($dark,5%);
+      border-color: #DDDDDD;
       border-radius: 2px;
       box-shadow: none;
       padding: 25px;
-
       .modal-header {
-        border-bottom: 2px solid darken($dark,5%);
+        border-bottom-width: 2px;
         margin: 0;
         padding: 0;
         padding-bottom: 15px;
@@ -989,19 +915,10 @@ select[multiple] {
       }
       .modal-footer {
         padding: 0;
-        border-top: 2px solid darken($dark,5%);
         padding-top: 15px;
       }
     }
   }
-}
-
-.close {
-  color: $muted;
-}
-
-.modal-title {
-  margin-top: 0;
 }
 
 .modal-full {
@@ -1139,17 +1056,15 @@ select[multiple] {
 
 /* Code */
 code {
-    color: $dark;
-    background-color: rgba($lightdark,0.5);
+    color: $primary;
+    background-color: $lightdark;
     border-radius: 4px;
 }
 
 /* Pre */
 pre{
-  background-color: darken($dark,7%);
-  border: 1px solid darken($dark,5%);
-  padding: 20px;
-  color: $muted;
+  background-color: $lightdark;
+  border: 1px solid #D4D8DA;
 }
 
 /* Carousel */

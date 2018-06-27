@@ -62,7 +62,7 @@ File: Pages
 }
 
 .fc-day {
-  background: transparent;
+  background: $white;
 }
 
 .fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active,
@@ -81,7 +81,7 @@ File: Pages
 
 .fc {
   th.fc-widget-header {
-    background: rgba($white,0.2);
+    background: $light5;
     font-size: 14px;
     line-height: 20px;
     padding: 10px 0px;
@@ -89,18 +89,11 @@ File: Pages
   }
 }
 
-.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody,
-.fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-popover {
-  background-color: transparent;
-  border-color: rgba($white,0.1);
-}
-
 .fc-button {
-  background: darken($dark,4%) !important;
-  border: 1px solid darken($dark,1%);
-  color: $white;
+  background: $white;
+  border: 1px solid $light5;
+  color: $lightdark5;
   text-transform: capitalize;
-  text-shadow: none;
 }
 
 .fc-text-arrow {
@@ -109,7 +102,7 @@ File: Pages
 }
 
 .fc-state-hover {
-  background: #F5F5F5;
+  background: $light3;
 }
 
 .fc-state-highlight {
@@ -122,7 +115,7 @@ File: Pages
 
 .fc-unthemed {
   .fc-today {
-    background: transparent !important;
+    background: $white;
   }
 }
 
@@ -133,7 +126,6 @@ File: Pages
   font-size: 13px;
   margin: 5px 7px;
   padding: 5px 5px;
-  color: $white !important;
   text-align: center;
 }
 
@@ -153,6 +145,9 @@ File: Pages
   td.fc-day-number {
     padding-right: 5px;
   }
+}
+.fc-content {
+  color: $white;
 }
 
 
@@ -175,8 +170,7 @@ File: Pages
 .bootstrap-tagsinput {
   box-shadow: none;
   padding: 3px 7px 6px;
-  background-color: darken($dark,7%);
-  border: 2px solid darken($dark,1%);
+  border: 1px solid #e3e3e3;
   width: 100%;
 
   .label-info {
@@ -187,10 +181,6 @@ File: Pages
     margin: 3px 1px;
     border-radius: 3px;
   }
-
-  input {
-    color: $white;
-  }
 }
 /* Multiple */
 .ms-container {
@@ -198,72 +188,36 @@ File: Pages
 
   .ms-list {
     box-shadow: none;
-    border: 2px solid darken($dark,1%);
+    border: 1px solid #e3e3e3;
   }
   .ms-list.ms-focus {
     box-shadow: none;
-    border: 2px solid lighten($dark,2%);
+    border: 1px solid #aaaaaa;
   }
   .ms-selectable {
-    background-color: darken($dark,7%);
     li.ms-elem-selectable{
       border: none;
       padding: 5px 10px;
-      color: $muted;
     }
   }
   .ms-selection {
-    background-color: darken($dark,7%);
     li.ms-elem-selection{
       border: none;
       padding: 5px 10px;
-      color: $muted;
     }
   }
 }
-
-
-.search-input {
-  margin-bottom: 10px;
-}
-
-.ms-selectable {
-  box-shadow: none;
-  outline: none !important;
-}
-
-.ms-container {
-  .ms-list.ms-focus {
-    box-shadow: none;
-  }
-  .ms-selectable {
-    li.ms-hover {
-      background-color: $custom;
-      color: $white;
-    }
-  }
-  .ms-selection {
-    li.ms-hover {
-      background-color: $custom;
-      color: $white;
-    }
-  }
-}
-
-
 /* Select 2 */
 .select2-container {
   width: 100% !important;
 
   .select2-selection--single {
-    background-color: darken($dark,7%);
-    border: 2px solid darken($dark,1%);
+    border: 1px solid darken($light,1%);
     height: 38px;
 
     .select2-selection__rendered {
       line-height: 36px;
       padding-left: 12px;
-      color: $muted;
     }
 
     .select2-selection__arrow {
@@ -325,8 +279,7 @@ File: Pages
 
 .select2-container .select2-selection--multiple {
   min-height: 38px;
-  background-color: darken($dark,7%);
-  border: 2px solid darken($dark,1%) !important;
+  border: 1px solid darken($light,5%) !important;
 
   .select2-selection__rendered {
     padding: 2px 10px;
@@ -334,7 +287,6 @@ File: Pages
   .select2-search__field {
     margin-top: 7px;
     border: 0;
-    color: $white;
   }
   .select2-selection__choice {
     background-color: $custom;
@@ -422,7 +374,7 @@ File: Pages
   background-color: $light-alt;
 }
 .datepicker-inline {
-  border: 2px solid darken($dark,1%);
+  border: 2px solid $light;
 }
 .daterangepicker td.active, .daterangepicker td.active:hover {
     background-color: $primary;
@@ -447,6 +399,33 @@ File: Pages
   background-color: $primary;
       border: 1px solid $primary;
 }
+
+
+.search-input {
+  margin-bottom: 10px;
+}
+
+.ms-selectable {
+  box-shadow: none;
+  outline: none !important;
+}
+
+.ms-container {
+  .ms-list.ms-focus {
+    box-shadow: none;
+  }
+  .ms-selectable {
+    li.ms-hover {
+      background-color: $primary;
+    }
+  }
+  .ms-selection {
+    li.ms-hover {
+      background-color: $primary;
+    }
+  }
+}
+
 
 
 /* Timepicker */
@@ -479,10 +458,10 @@ File: Pages
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.25;
-    color: $muted;
+    color: $dark;
     text-align: center;
-    background-color: darken($dark,5%);
-    border: 1px solid darken($dark,5%);
+    background-color: $light;
+    border: 1px solid rgba($dark,.15);
   }
   .input-group-btn:not(:first-child)>.btn, .input-group-btn:not(:first-child)>.btn-group {
     z-index: 2;
@@ -517,23 +496,6 @@ File: Pages
       &:hover,&:focus,&:active {
         border-right: none !important;
       }
-    }
-  }
-}
-
-/* Dropify */
-.dropify-wrapper {
-  background-color: darken($dark,10%);
-  border: 2px solid darken($dark,1%);
-
-  &:hover {
-    background-image: -webkit-linear-gradient(135deg,$dark 25%,transparent 25%,transparent 50%,$dark 50%,$dark 75%,transparent 75%,transparent);
-    background-image: linear-gradient(-45deg,$dark 25%,transparent 25%,transparent 50%,$dark 50%,$dark 75%,transparent 75%,transparent);
-  }
-
-  .dropify-message {
-    p {
-      color: $muted;
     }
   }
 }
@@ -591,8 +553,8 @@ File: Pages
   border-width: 0px !important;
 }
 .mce-container .mce-menubar {
-  background-color: darken($dark,5%) !important;
-  border: 1px solid darken($dark,1%) !important;
+  background-color: #f2f4f7 !important;
+  border: 1px solid #d7dce5 !important;
   padding: 2px;
 }
 .mce-container .mce-menubar .mce-btn button span {
@@ -645,18 +607,18 @@ File: Pages
   background-image: none;
 }
 .mce-container .mce-toolbar-grp {
-  background-color: darken($dark,5%) !important;
-  border: 1px solid darken($dark,1%) !important;
+  background-color: #f2f4f7 !important;
+  border: 1px solid #d7dce5 !important;
   border-top-width: 0px !important;
   padding: 6px;
 }
 .mce-container .mce-edit-area {
-  border: 1px solid darken($dark,1%) !important;
+  border: 1px solid #d7dce5 !important;
   border-width: 0px 1px !important;
 }
 .mce-container .mce-statusbar {
-  background-color: darken($dark,5%) !important;
-  border: 1px solid darken($dark,1%) !important;
+  background-color: #f2f4f7 !important;
+  border: 1px solid #d7dce5 !important;
 }
 .mce-container .mce-statusbar .mce-path .mce-path-item {
   color: #707780;
@@ -670,15 +632,12 @@ File: Pages
   border-left: 1px solid transparent;
 }
 .mce-container .mce-btn-group {
-  border: 1px solid transparent !important;
-}
-.mce-label {
-  text-shadow: none !important;
+  border: 1px solid #e9ecf2 !important;
 }
 .mce-container .mce-btn-group .mce-btn {
   box-shadow: none;
   background-image: none;
-  background-color: darken($dark,4%);
+  background-color: $white;
   border-width: 0px;
   border-radius: 0px !important;
 }
@@ -686,20 +645,12 @@ File: Pages
 .mce-container .mce-btn-group .mce-btn:focus {
   box-shadow: none;
   background-image: none;
-  background-color: darken($dark,3%);
+  background-color: $white;
 }
 .mce-container .mce-btn-group .mce-btn button span {
   color: #707780;
   font-size: 14px;
   font-weight: 300;
-}
-
-.mce-caret {
-  border-top: 4px solid lighten($dark,5%) !important;
-}
-
-.mce-splitbtn .mce-open,.mce-colorbutton:hover .mce-open,.mce-colorbutton .mce-open {
-  border-left: none !important;
 }
 .mce-container .mce-btn-group .mce-btn button .mce-caret {
   color: #707780;
@@ -778,7 +729,7 @@ File: Pages
   background-color: #d7dce5;
 }
 .mce-menubtn button {
-    color: $muted !important;
+    color: $dark !important;
 }
 .mce-menu-item-normal.mce-active {
     background-color: $custom !important;
@@ -977,18 +928,11 @@ File: Pages
   tr {
    height: 20px;
   }
-  div:first-of-type {
-    background-color: transparent !important;
-  }
 }
 .legendLabel {
     padding-left: 5px !important;
     line-height: 10px;
     padding-right: 10px;
-    color: $muted;
-}
-.flot-tick-label {
-  color: $muted !important;
 }
 
 /* Sparkline chart */
@@ -1022,7 +966,7 @@ File: Pages
   }
 }
 .ct-grid {
-    stroke: rgba($white,0.15);
+    stroke: rgba($dark,0.15);
 }
 .ct-chart.simple-pie-chart-chartist {
   .ct-label {
@@ -1213,7 +1157,7 @@ File: Pages
     top: 50%;
     width: 21px;
     i {
-      color: darken($dark,5%);
+      color: $light5;
     }
   }
   .time-icon {
@@ -1243,7 +1187,7 @@ h3.timeline-title {
   .timeline-desk {
     .arrow {
       border-bottom: 8px solid transparent;
-      border-right: 8px solid darken($dark,10%) !important;
+      border-right: 8px solid $white !important;
       border-top: 8px solid transparent;
       display: block;
       height: 0;
@@ -1265,7 +1209,7 @@ h3.timeline-title {
   .timeline-desk {
     .arrow-alt {
       border-bottom: 8px solid transparent;
-      border-left: 8px solid darken($dark,10%) !important;
+      border-left: 8px solid $white !important;
       border-top: 8px solid transparent;
       display: block;
       height: 0;
@@ -1320,7 +1264,7 @@ h3.timeline-title {
     margin: 0;
   }
   .panel {
-    background: darken($dark,10%);
+    background: $white;
     display: block;
     margin-bottom: 5px;
     margin-left: 45px;
@@ -1337,6 +1281,7 @@ h3.timeline-title {
     }
   }
   p {
+    color: #999999;
     font-size: 14px;
     margin-bottom: 0;
   }
@@ -1373,7 +1318,7 @@ h3.timeline-title {
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-    color: $muted;
+    color: #333333;
     font-weight: 600;
     padding: 5px 10px;
     display: inline-block;
@@ -1389,11 +1334,14 @@ h3.timeline-title {
 }
 
 .thumb {
-  background-color: darken($dark,10%);
+  background-color: $white;
   border-radius: 3px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   margin-top: 20px;
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
   width: $width;
 }
 
@@ -1600,7 +1548,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     font-size: 48px;
     font-family: $font-secondary;
     margin-bottom: 10px;
-    color: $white;
+    color: $dark;
   }
   .plan-duration {
     font-size: 13px;
@@ -1685,7 +1633,6 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   }
 }
 .kanban-box {
-  border: 2px solid darken($dark,5%);
   .checkbox-wrapper {
     float: left;
 
@@ -1702,8 +1649,8 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       font-weight: 500;
       font-family: $font-primary;
 
-      a {
-        color: $muted;
+      a{
+        color: $dark;
       }
     }
     ul {
@@ -1712,7 +1659,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
           display: inline-block;
           i {
             font-size: 16px;
-            color: $white;
+            color: $muted;
             padding: 0px 5px;
             line-height: 32px;
           }
@@ -1724,15 +1671,15 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 }
 
 .gu-mirror {
+  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba($dark,0.1) !important;
   margin-bottom: 0px !important;
   opacity: 1;
-  list-style: none;
 
   .card-box {
-    margin: 0px !important;
+    margin-bottom: 0px !important;
   }
 }
-
 
 /* Task Detail */
 .task-detail {
@@ -1829,13 +1776,12 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 ============= */
 
 .account-pages {
-  background: url("../images/big/bg.jpg") center;
+  background: url("../images/big/bg1.jpg") center;
   position: absolute;
   height: 100%;
   top: 0;
   width: 100%;
   background-size: cover;
-  border: 20px solid rgba($dark, 0.3);
 }
 .wrapper-page {
   margin: 5% auto;
@@ -1981,10 +1927,10 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   width: 240px;
   transition-duration: .3s;
   z-index: 5;
-  color: $muted;
+  color: $dark;
 
   a {
-    color: $muted;
+    color: $dark;
   }
 
   .menu-segment {
@@ -2007,7 +1953,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       text-transform: uppercase;
       font-weight: 600;
       padding: 10px 0;
-      color: rgba($white,0.5);
+      color: #465162;
 
       .icon {
         float: right;
@@ -2090,7 +2036,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   right: 0;
   z-index: 4;
   transition-duration: .3s;
-  background-color: darken($dark,10%);
+  background-color: $white;
 
   .overlay {
     position: absolute;
@@ -2184,15 +2130,15 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
         height: 40px;
         z-index: 2;
         outline: none;
-        color: $white;
+        color: #999;
         background: transparent;
-        border: 2px solid darken($dark,5%);
+        border: 2px solid #EFEFEF;
         border-radius: 5px;
         transition-timing-function: cubic-bezier(0.3, 1.5, 0.6, 1);
 
         &:focus {
-          color: $white;
-          border-color: darken($dark,3%);
+          color: #333;
+          border-color: #d6d6d6;
         }
 
         &:focus ~ .icon {
@@ -2233,7 +2179,6 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       height: 50px;
       line-height: 50px;
       cursor: default;
-      color: rgba($muted, 0.6);
       transition-duration: .3s;
 
       &:hover {
@@ -2329,7 +2274,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
     li.unread {
       font-weight: 600;
-      color: rgba($muted,0.95);
+      color: #555;
     }
 
     li.blue-dot .mail-col-1 .dot {
@@ -2767,15 +2712,10 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 .profile-pills {
   li{
     a{
-      color: rgba($white,0.5) !important;
+      color: rgba($dark,0.5) !important;
       padding: 0 10px;
       display: block;
       line-height: 30px !important;
-
-      &:hover {
-        background-color: transparent;
-        color: $white !important;
-      }
 
       i {
         font-size: 14px;
@@ -2806,7 +2746,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       position: relative;
   }
   .comment-text {
-      border: 1px solid darken($dark,2%);
+      border: 1px solid #e5e5e5;
       border-radius: 2px;
       padding: 7px 12px 8px;
   }
@@ -2815,7 +2755,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
       padding-bottom: 2px;
 
     a{
-      color: lighten($muted,15%);
+      color: $dark;
       font-weight: bold;
     }
     span {
@@ -2836,7 +2776,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     }
   }
   .comment-footer, .comment-footer a {
-    color: lighten($muted,5%);
+    color: rgba($dark, 0.5);
 
     &:hover {
       color: $custom;
